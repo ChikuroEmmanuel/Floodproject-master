@@ -1,66 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Disaster Watch: Flood Prediction Web Application That Uses Decision Tree Algorithm to predict Floods.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
+**Disaster Watch** is a web application designed to predict floods in informal settlement areas in Kenya using machine learning algorithms. This project leverages a Decision Tree algorithm to analyze historical rainfall data and forecast potential flood occurrences and their severity.
 
-## About Laravel
+## Tools and Dependencies
+- **Node js**: https://nodejs.org/en
+- **Visual Studio Code**
+- **Pycharm IDE**
+- **Anaconda**:https://www.anaconda.com/download
+- **Machine Learning Libraries:** Pandas, scikit-learn, tensorFlow
+- **Web Frameworks** Laravel, Flask API
+  ## Dataset
+  This project needs a reliable datasets which you can get easily by following the following link:
+  (https://www.kaggle.com/datasets)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
+To run this project locally, follow these steps:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/username/disaster-watch.git
+    cd disaster-watch
+    ```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. **Install dependencies:**
+    ```bash
+    composer require laravel/jetstream
+    ```
+3. **Install livewire Jetstream**
+     ```bash
+    php artisan jetstream:install livewire
+    ```
+4. **Run Npm module**
+     ```bash
+   npm run dev
+    ```
 
-## Learning Laravel
+5. **Run the application:**
+    ```bash
+    php artisan serve
+    ```
+# Machine Learning installation
+To run the machine learning model follow the steps:
+1. **Install machine learning framework**
+   ```bash
+     pip install tensorflow
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    ```
+2. **Install Flask**
+    ```bash
+     pip install flask
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    ```
+  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Usage
+1. **Data Input:** Upload historical rainfall data in CSV format.
+2. **Run Prediction:** Use the web interface to initiate the flood prediction process.
+3. **View Results:** Access prediction results and insights through the user dashboard.
 
-## Laravel Sponsors
+## Methodology
+This project employs the **Structured System Analysis and Design Method (SSADM)** and a **Modified Waterfall Model** for system development. Key stages include:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Requirement Analysis:** Identifying and documenting system requirements.
+2. **Design:** Creating system architecture and design documents.
+3. **Implementation:** Developing the flood prediction model and web interface.
+4. **Testing:** Ensuring system functionality and accuracy.
+5. **Operation and Maintenance:** Deploying the system and performing regular maintenance.
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+## Contributors
+- **Chikuro Emmanuel Mbaji** (Admission Number: 151947)
+- **Makau Nathan Maganga** (Admission Number: 150460)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Acknowledgements
+We extend our gratitude to Strathmore University for the opportunity to work on this project. Special thanks to:
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Mr. Kevin Omondi**, Lecturer, for his guidance in writing the proposal.
+- **Mr. Bruce L. Totona**, Supervisor, for his insights and support.
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
