@@ -17,9 +17,10 @@
                 <h2><a href="#" class="logo">Rainy Brain</a></h2>
                 <div class="navigation">
                     <a href="#">Home</a>
-                    <a href="#about">About Rainy Brain</a>
                     <a href="{{route('analytic')}}">Dashboard</a>
+                    <a href="{{ route('pred-view')}}">Recent Predictions</a>
                     <a href="{{route('flood-predictions')}}">Predictor</a>
+                    <a href="{{route('feedback')}}">Feedback</a>
                 </div>
                 <label for="check">
                     <i class="fas fa-bars menu-btn"></i>

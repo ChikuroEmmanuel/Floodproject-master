@@ -15,15 +15,23 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
 
-      <div class="pt-4 pb-1 border-t border-gray-200">
+      <div class="pt-4 pb-1 border-t border-gray-200"?>
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <div class="shrink-0 me-3">
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                    @if (Auth::check())
+                         <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                             @else
+                              <span>User is not authenticated</span>
+                    @endif
                     </div>
                 @endif
         <div class="info">
-          <a href="{{ route('profile.show') }}" class="d-block">{{auth()->user()->name}}</a>
+        @if (auth()->check())
+            <a href="{{ route('profile.show') }}" class="d-block">{{ auth()->user()->name }}</a>
+          @else
+            <a href="{{ route('login') }}" class="d-block">Login</a>
+        @endif
         </div>
       </div>
 
@@ -77,6 +85,14 @@
                 </a>
               </li>
               </ul>
+          <li class="nav-item">
+            <a href="{{route('admin.feedbackadmin.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Feedback 
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>

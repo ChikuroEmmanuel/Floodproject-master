@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SystemConfigController;
 use App\Http\Controllers\FloodPredictionsController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'login');
@@ -47,8 +49,19 @@ Route::get('/admin/system-config',[SystemConfigController::class,'edit'])->name(
 Route::put('/admin/system-config',[SystemConfigController::class,'update']);
 Route::get('/admin/profile',[ProfileController::class,'profile'])->name('admin.profile');
 Route::patch('/admin',[ProfileController::class,'profile'])->name('admin.profile.update');
+
 Route::get('/flood-predictions', [FloodPredictionsController::class, 'showForm'])->name('flood-predictions');
-Route::get('/predict-flood', [FloodPredictionsController::class, 'predictFlood'])->name('predictFlood');
-Route::post('/predict-flood', [FloodPredictionsController::class, 'predictFlood'])->name('predictFlood');
+Route::post('/predict', [FloodPredictionsController::class, 'predictFlood'])->name('predictFlood');
+Route::get('/pred-view', [FloodPredictionsController::class, 'showPrediction'])->name('pred-view');
+
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::get('/feedback',[FeedbackController::class,'index'])->name('feedback');
+Route::get('/admin/feedbackadmin/index',[AdminController::class, 'index'])->name('admin.feedbackadmin.index');
+Route::get('/admin/feedbackadmin/show',[AdminController::class, 'show'])->name('admin.feedbackadmin.show');
+Route::get('/admin/feedbackadmin',[AdminController::class, 'edit'])->name('admin.feedbackadmin.edit');
+Route::post('/update',[AdminController::class, 'update'])->name('update');
+Route::delete('/delete',[AdminController::class, 'destroy'])->name('delete');
+
+
 
 
