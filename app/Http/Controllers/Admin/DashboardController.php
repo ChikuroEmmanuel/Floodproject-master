@@ -10,5 +10,6 @@ class DashboardController extends Controller
     {
         $userCount = User::count();
         return view('admin.adm-dashboard', compact('userCount'));
+        
     }
 }

@@ -14,6 +14,7 @@
         <button type="submit">Predict</button>
     </form>
 
+    
     <div id="predictionResult">
         <!-- Prediction result will be displayed here -->
     </div>

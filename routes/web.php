@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LockController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\UserController;

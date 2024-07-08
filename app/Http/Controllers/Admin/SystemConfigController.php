@@ -47,4 +47,5 @@ class SystemConfigController extends Controller
 
         return redirect()->route('system-config.index')->with('success', 'System configuration updated successfully!');
     }
+    
 }

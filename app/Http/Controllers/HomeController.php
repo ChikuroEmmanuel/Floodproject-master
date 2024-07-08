@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
+
 {
     public function index(){
         if(Auth::user()->usertype == 'user'){

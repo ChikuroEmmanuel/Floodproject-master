@@ -11,5 +11,6 @@ class LockController extends Controller
         auth()->logout();
 
     return view('lockscreen');
+    
     }
 }
