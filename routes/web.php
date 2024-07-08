@@ -50,7 +50,7 @@ Route::put('/admin/system-config',[SystemConfigController::class,'update']);
 Route::get('/admin/profile',[ProfileController::class,'profile'])->name('admin.profile');
 Route::patch('/admin',[ProfileController::class,'profile'])->name('admin.profile.update');
 
-Route::get('/flood-predictions', [FloodPredictionsController::class, 'showForm'])->name('flood-predictions');
+Route::get('/predict', [FloodPredictionsController::class, 'showForm'])->name('predict');
 Route::post('/predict', [FloodPredictionsController::class, 'predictFlood'])->name('predictFlood');
 Route::get('/pred-view', [FloodPredictionsController::class, 'showPrediction'])->name('pred-view');
 

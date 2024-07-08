@@ -18,7 +18,7 @@
                 </ul>
             </div>
         @endif
-        <form method="POST" action="{{ route('predictFlood') }}">
+        <form method="POST" action="{{route('predictFlood')}}">
             @csrf
             <div class="form-group">
                 <label for="MinTemp">Min Temp</label>

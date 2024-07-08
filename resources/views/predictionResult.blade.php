@@ -19,7 +19,8 @@
         <p><strong>Humidity 3pm:</strong> {{ $input['Humidity3pm'] }}</p>
         <p><strong>Rain Today:</strong> {{ $input['RainToday'] == 1 ? 'Yes' : 'No' }}</p>
         <p><strong>Prediction:</strong> {{ $prediction }}</p>
-        <a href="{{ route('flood-predictions') }}" class="btn btn-primary">Back to Prediction Form</a>
+        <a href="{{ route('predict') }}" class="btn btn-primary">Back to Prediction Form</a>
+        <a href="{{ route('dashboard') }}" class="btn btn-primary">Home</a>
     </div>
 </body>
 </html>

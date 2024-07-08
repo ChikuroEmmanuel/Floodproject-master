@@ -13,11 +13,11 @@ class FloodPredictionsController extends Controller
         return view('flood-predictions');
     }
 
-    public function showPredictions()
+    public function showPrediction()
   {
     $predictions = Prediction::all();
     return view('pred-view', ['predictions' => $predictions]);
-}
+  }
 
     public function predictFlood(Request $request)
     {
@@ -48,22 +48,21 @@ class FloodPredictionsController extends Controller
 
         // Send POST request to Flask server
         try {
-            $response = Http::post('http://127.0.0.1:5000/predict',['json' => true]);
+            $response = Http::post('http://127.0.0.1:5000/predict');
             if ($response->successful()) {
-                $prediction = $response->body();
-                // Save prediction to the database
-                $prediction = new Prediction();
-                $prediction->MinTemp = $data['MinTemp'];
-                $prediction->MaxTemp = $data['MaxTemp'];
-                $prediction->WindSpeed9am = $data['WindSpeed9am'];
-                $prediction->WindSpeed3pm = $data['WindSpeed3pm'];
-                $prediction->Humidity9am = $data['Humidity9am'];
-                $prediction->Humidity3pm = $data['Humidity3pm'];
-                $prediction->RainToday = $data['RainToday'];
-                $prediction->RainTomorrow = $prediction['RainTomorrow']; // Adjust according to Flask server response
-                $prediction->save();
+                
+                $Prediction = Prediction::create([
+                    'MinTemp' => $data['MinTemp'],
+                    'MaxTemp' => $data['MaxTemp'],
+                    'WindSpeed9am' => $data['WindSpeed9am'],
+                    'WindSpeed3pm' => $data['WindSpeed3pm'],
+                    'Humidity9am' => $data['Humidity9am'],
+                    'Humidity3pm' => $data['Humidity3pm'],
+                    'RainToday' => $data['RainToday'],
+                    'RainTomorrow' => $response['prediction'],
+                ]);
                 // Return the view with the prediction result
-                return view('predictionResult', ['prediction' => $prediction, 'input' => $data]);
+                return view('predictionResult', ['prediction' => $response, 'input' => $data]);
             } else {
                 $errorMessage = 'Error: Could not get prediction from Flask server.';
                 return view('predictionResult', ['prediction' => $errorMessage, 'input' => $data]);
@@ -73,4 +72,4 @@ class FloodPredictionsController extends Controller
             return view('predictionResult', ['prediction' => $errorMessage, 'input' => $data]);
         }
     }
-}
+   }

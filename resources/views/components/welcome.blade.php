@@ -19,7 +19,7 @@
                     <a href="#">Home</a>
                     <a href="{{route('analytic')}}">Dashboard</a>
                     <a href="{{ route('pred-view')}}">Recent Predictions</a>
-                    <a href="{{route('flood-predictions')}}">Predictor</a>
+                    <a href="{{route('predict')}}">Predictor</a>
                     <a href="{{route('feedback')}}">Feedback</a>
                 </div>
                 <label for="check">
